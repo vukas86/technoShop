@@ -3,6 +3,7 @@ import Menu from "./components/Menu";
 import Card from "./components/Card";
 import SpecialOffer from "./components/SpecialOffer";
 import Banner2 from "./components/Banner2";
+import Footer from "./components/footer/Footer";
 
 // import blender from "{props.image}";
 function App() {
@@ -96,6 +97,7 @@ function App() {
         </div>
         <Banner2 />
       </div>
+      <Footer />
     </div>
   );
 }
