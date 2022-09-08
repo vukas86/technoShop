@@ -1,0 +1,70 @@
+.contact-container {
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  border-bottom: 1px solid black;
+  backdrop-filter: blur(5px);
+}
+
+.info-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  height: 200px;
+  margin: 40px;
+}
+
+.info-card img {
+  height: 40px;
+}
+.info-card a {
+  text-decoration: none;
+  color: black;
+}
+
+.info-card a:hover {
+  color: red;
+}
+
+.bg-image {
+  background-image: url(../../images/pictures/pexels.jpg);
+
+  /* background: linear-gradient(rgba(0, 0, 0, 0.17), rgba(0, 0, 0, 0.1)),
+    url(../../images/pictures/pexels.jpg); */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about-container {
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: space-around;
+}
+
+.logo {
+  height: 80px;
+}
+
+.logos {
+  font-size: 20px;
+}
+
+.logos i {
+  border: 1px solid black;
+  border-radius: 100%;
+  padding: 10px;
+  margin: 5px;
+  background-color: rgb(231, 233, 74);
+  cursor: pointer;
+}
+
+.logos i:hover {
+  color: white;
+}
+
+.pay-cards {
+  width: 200px;
+  height: fit-content;
+  margin-top: 40px;
+}
