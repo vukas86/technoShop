@@ -12,6 +12,24 @@ function SpecialOffer(props) {
   const clickPlusHandler = () => {
     setQuantity(quantity + 1);
   };
+  const [data, setData] = useState("");
+  const cartHandler = (e) => {
+    e.preventDefault();
+    setData("Hello");
+  };
+  const submitHandler = (e) => {
+    e.preventDefault();
+
+    if (quantity === 0) return;
+    const product = {
+      id: props.id,
+      image: props.image,
+      title: props.title,
+      price: props.price,
+      quantity: { quantity },
+    };
+    props.onSavedProducts(product);
+  };
 
   return (
     <div>
@@ -29,7 +47,12 @@ function SpecialOffer(props) {
             +
           </button>
         </div>
-        <button className="cart_btn" title="Add To Cart">
+        <button
+          className="cart_btn"
+          title="Add To Cart"
+          value="submit"
+          onClick={submitHandler}
+        >
           <span>
             <img src={basketIconWhite} alt="basketIcon"></img>
           </span>

@@ -4,9 +4,18 @@ import Card from "./components/Card";
 import SpecialOffer from "./components/SpecialOffer";
 import Banner2 from "./components/Banner2";
 import Footer from "./components/footer/Footer";
+// import Cart from "./components/cart/Cart";
 
 // import blender from "{props.image}";
 function App() {
+  const savedProducts = (product) => {
+    const chosenProducts = {
+      ...product,
+      id: Math.random().toString(),
+    };
+    console.log(chosenProducts);
+  };
+
   const products = [
     {
       id: 1,
@@ -60,30 +69,35 @@ function App() {
         <h3>Special Offers</h3>
         <div className="special_container">
           <SpecialOffer
+            onSavedProducts={savedProducts}
             discount={products[0].discount}
             title={products[0].title}
             price={products[0].price}
             image={products[0].image}
           />
           <SpecialOffer
+            onSavedProducts={savedProducts}
             discount={products[1].discount}
             title={products[1].title}
             price={products[1].price}
             image={products[1].image}
           />
           <SpecialOffer
+            onSavedProducts={savedProducts}
             discount={products[2].discount}
             title={products[2].title}
             price={products[2].price}
             image={products[2].image}
           />
           <SpecialOffer
+            onSavedProducts={savedProducts}
             discount={products[3].discount}
             title={products[3].title}
             price={products[3].price}
             image={products[3].image}
           />
           <SpecialOffer
+            onSavedProducts={savedProducts}
             discount={products[4].discount}
             title={products[4].title}
             price={products[4].price}
@@ -98,6 +112,7 @@ function App() {
         <Banner2 />
       </div>
       <Footer />
+      {/* <Cart /> */}
     </div>
   );
 }
