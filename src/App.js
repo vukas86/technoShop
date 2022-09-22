@@ -4,17 +4,20 @@ import Card from "./components/Card";
 import SpecialOffer from "./components/SpecialOffer";
 import Banner2 from "./components/Banner2";
 import Footer from "./components/footer/Footer";
-// import Cart from "./components/cart/Cart";
+import Cart from "./components/cart/Cart";
 
 // import blender from "{props.image}";
 function App() {
+  const cartArray = [];
   const savedProducts = (product) => {
     const chosenProducts = {
       ...product,
       id: Math.random().toString(),
     };
-    console.log(chosenProducts);
+
+    cartArray.push(chosenProducts);
   };
+  console.log(cartArray);
 
   const products = [
     {
@@ -60,9 +63,10 @@ function App() {
       price: 182.45,
     },
   ];
+
   return (
     <div>
-      <Header />
+      <Header {...cartArray} />
       <Menu />
       <div className="cardContainer">
         <Card />
@@ -112,7 +116,7 @@ function App() {
         <Banner2 />
       </div>
       <Footer />
-      {/* <Cart /> */}
+      <Cart cartArray={cartArray} />
     </div>
   );
 }
