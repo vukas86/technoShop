@@ -5,19 +5,21 @@ import SpecialOffer from "./components/SpecialOffer";
 import Banner2 from "./components/Banner2";
 import Footer from "./components/footer/Footer";
 import Cart from "./components/cart/Cart";
+import { useState } from "react";
 
-// import blender from "{props.image}";
 function App() {
-  const cartArray = [];
+  const [cart, setCart] = useState([]);
+
   const savedProducts = (product) => {
     const chosenProducts = {
       ...product,
       id: Math.random().toString(),
     };
+    console.log(chosenProducts);
 
-    cartArray.push(chosenProducts);
+    setCart((cart) => [...cart, chosenProducts]);
   };
-  console.log(cartArray);
+  console.log(cart);
 
   const products = [
     {
@@ -66,7 +68,8 @@ function App() {
 
   return (
     <div>
-      <Header {...cartArray} />
+      <Cart cartArray={cart}>{/* <CartItems cartArray={cartArray} /> */}</Cart>
+      <Header />
       <Menu />
       <div className="cardContainer">
         <Card />
@@ -107,16 +110,10 @@ function App() {
             price={products[4].price}
             image={products[4].image}
           />
-          {/* <SpecialOffer
-            discount={products[5].discount}
-            title={products[5].title}
-            price={products[5].price}
-          /> */}
         </div>
         <Banner2 />
       </div>
       <Footer />
-      <Cart cartArray={cartArray} />
     </div>
   );
 }

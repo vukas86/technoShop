@@ -12,11 +12,7 @@ function SpecialOffer(props) {
   const clickPlusHandler = () => {
     setQuantity(quantity + 1);
   };
-  const [data, setData] = useState("");
-  const cartHandler = (e) => {
-    e.preventDefault();
-    setData("Hello");
-  };
+
   const submitHandler = (e) => {
     e.preventDefault();
 
