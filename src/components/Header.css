@@ -24,4 +24,15 @@
 
 .links a {
   margin-right: 60px;
+  text-decoration: none;
+}
+
+.links a span {
+  margin-left: 2px;
+  color: red;
+  font-weight: bold;
+  border: solid white 1px;
+  border-radius: 100%;
+  padding: 3px 5px;
+  background-color: white;
 }

@@ -5,6 +5,10 @@ import basketIconWhite from "../images/icons/basket-white.svg";
 // import { Link } from "react-router-dom";
 
 function Header(props) {
+  const itemsTotal = props.cartItemsNumber.reduce((acc, curVal) => {
+    return acc + curVal.quantity.quantity;
+  }, 0);
+
   return (
     <div>
       <div className="container">
@@ -15,10 +19,9 @@ function Header(props) {
           <a href="#home">
             <img src={personIconWhite} alt="person-icon" height={30}></img>
           </a>
-          <a href="#modal">
-            <button className="cart-icon" value="submit">
-              <img src={basketIconWhite} alt="basket-icon" height={30}></img>
-            </button>
+          <a href="#home">
+            <img src={basketIconWhite} alt="basket-icon" height={30}></img>
+            <span>{itemsTotal}</span>
           </a>
         </div>
       </div>

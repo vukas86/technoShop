@@ -15,11 +15,12 @@ function App() {
       ...product,
       id: Math.random().toString(),
     };
-    console.log(chosenProducts);
-
     setCart((cart) => [...cart, chosenProducts]);
   };
-  console.log(cart);
+
+  const savedProductsHandler = (passedProduct) => {
+    setCart(cart.filter((e) => e.id !== passedProduct.id));
+  };
 
   const products = [
     {
@@ -68,8 +69,9 @@ function App() {
 
   return (
     <div>
-      <Cart cartArray={cart}>{/* <CartItems cartArray={cartArray} /> */}</Cart>
-      <Header />
+      <Cart cartArray={cart} onSavedProducts={savedProductsHandler} />
+
+      <Header cartItemsNumber={cart} />
       <Menu />
       <div className="cardContainer">
         <Card />

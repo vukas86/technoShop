@@ -12,7 +12,10 @@ const CartItems = (props) => {
     if (quantity === 1) return;
     setQuantity(quantity - 1);
   };
-  console.log(quantity);
+
+  const deleteHandler = (e) => {
+    props.onSaveData(props);
+  };
   return (
     <>
       <div className="cart-item">
@@ -37,7 +40,7 @@ const CartItems = (props) => {
         </div>
         <div className="right">
           <span>{(quantity * props.price).toFixed(2)}$</span>
-          <button>
+          <button value="submit" onClick={deleteHandler}>
             <i class="fa fa-trash"></i>
           </button>
         </div>

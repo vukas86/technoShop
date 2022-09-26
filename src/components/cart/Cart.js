@@ -3,8 +3,9 @@ import CartItems from "./CartItems";
 import "./Cart.css";
 
 const Cart = (props) => {
-  console.log(props.cartArray);
-
+  const saveDataHandler = (enteredProduct) => {
+    props.onSavedProducts(enteredProduct);
+  };
   return (
     <>
       <div className="modal" id="modal">
@@ -13,10 +14,12 @@ const Cart = (props) => {
             return (
               <CartItems
                 id={e.id}
+                key={e.id}
                 title={e.title}
                 image={e.image}
                 price={e.price}
                 quantity={e.quantity.quantity}
+                onSaveData={saveDataHandler}
               />
             );
           })}
