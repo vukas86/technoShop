@@ -19,7 +19,7 @@ function Header(props) {
           <a href="#home">
             <img src={personIconWhite} alt="person-icon" height={30}></img>
           </a>
-          <a href="#home">
+          <a href="#home" onClick={props.onOpenCart}>
             <img src={basketIconWhite} alt="basket-icon" height={30}></img>
             <span>{itemsTotal}</span>
           </a>

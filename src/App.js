@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 import Card from "./components/Card";
@@ -5,10 +7,18 @@ import SpecialOffer from "./components/SpecialOffer";
 import Banner2 from "./components/Banner2";
 import Footer from "./components/footer/Footer";
 import Cart from "./components/cart/Cart";
-import { useState } from "react";
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [cartPage, setCartPage] = useState(false);
+
+  const openCartHander = () => {
+    setCartPage(true);
+  };
+
+  const closeCartHander = () => {
+    setCartPage(false);
+  };
 
   const savedProducts = (product) => {
     const chosenProducts = {
@@ -69,9 +79,15 @@ function App() {
 
   return (
     <div>
-      <Cart cartArray={cart} onSavedProducts={savedProductsHandler} />
+      {cartPage && (
+        <Cart
+          cartArray={cart}
+          onSavedProducts={savedProductsHandler}
+          onClick={closeCartHander}
+        />
+      )}
 
-      <Header cartItemsNumber={cart} />
+      <Header cartItemsNumber={cart} onOpenCart={openCartHander} />
       <Menu />
       <div className="cardContainer">
         <Card />
