@@ -1,8 +1,7 @@
 import "./Header.css";
-import logo from "../images/logo/TehnoShop-logos_white.png";
-import personIconWhite from "../images/icons/person-white.svg";
-import basketIconWhite from "../images/icons/basket-white.svg";
-// import { Link } from "react-router-dom";
+import logo from "../../images/logo/TehnoShop-logos_white.png";
+import personIconWhite from "../../images/icons/person-white.svg";
+import basketIconWhite from "../../images/icons/basket-white.svg";
 
 function Header(props) {
   const itemsTotal = props.cartItemsNumber.reduce((acc, curVal) => {

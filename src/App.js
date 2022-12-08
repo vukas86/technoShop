@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import Header from "./components/Header";
-import Menu from "./components/Menu";
-import Card from "./components/Card";
-import SpecialOffer from "./components/SpecialOffer";
-import Banner2 from "./components/Banner2";
+import Header from "./components/header/Header";
+import Menu from "./components/header/Menu";
+import Card from "./components/card/Card";
+import SpecialOffer from "./components/specialOffers/SpecialOffer";
+import Banner2 from "./components/banner/Banner2";
 import Footer from "./components/footer/Footer";
 import Cart from "./components/cart/Cart";
 
@@ -78,7 +78,7 @@ function App() {
   ];
 
   return (
-    <div>
+    <>
       {cartPage && (
         <Cart
           cartArray={cart}
@@ -132,7 +132,7 @@ function App() {
         <Banner2 />
       </div>
       <Footer />
-    </div>
+    </>
   );
 }
 

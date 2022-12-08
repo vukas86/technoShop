@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 
 import "./SpecialOffer.css";
-import basketIconWhite from "../images/icons/basket-white.svg";
+import basketIconWhite from "../../images/icons/basket-white.svg";
 
 function SpecialOffer(props) {
   const [quantity, setQuantity] = useState(0);
+
   const clickMinusHandler = () => {
     if (quantity === 0) return;
     setQuantity(quantity - 1);
@@ -15,6 +16,7 @@ function SpecialOffer(props) {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    console.log(e);
 
     if (quantity === 0) return;
     const product = {
@@ -24,11 +26,12 @@ function SpecialOffer(props) {
       price: props.price,
       quantity: { quantity },
     };
+    console.log(product);
     props.onSavedProducts(product);
   };
 
   return (
-    <div>
+    <>
       <div className="card_container">
         <div className="small_container"> -{props.discount}%</div>
         <img src={props.image} alt="placeholder"></img>
@@ -54,7 +57,7 @@ function SpecialOffer(props) {
           </span>
         </button>
       </div>
-    </div>
+    </>
   );
 }
 export default SpecialOffer;

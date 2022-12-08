@@ -1,5 +1,5 @@
 import "./Card.css";
-import Banner from "./Banner";
+import Banner from "../banner/Banner";
 
 function Card() {
   return (

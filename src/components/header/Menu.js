@@ -1,5 +1,5 @@
 import "./Menu.css";
-import downArrowIcon from "../images/icons/chevron-down-arrow.svg";
+import downArrowIcon from "../../images/icons/chevron-down-arrow.svg";
 
 function Menu() {
   return (
